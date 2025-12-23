@@ -1,6 +1,7 @@
 ---
 name: update-docs
 description: This skill should be used when the user asks to "update-docs", "update docs", "update the docs", "update documentation", "sync docs with code", "document changes", "update README", "update changelog", or mentions keeping documentation in sync with code changes.
+allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*), Bash(git branch:*), Bash(find:*), Bash(ls:*), Bash(cat:*), Bash(head:*), Bash(tree:*), Bash(wc:*), Read, Write, Glob, Grep, Task
 version: 1.0.0
 ---
 

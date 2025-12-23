@@ -1,6 +1,6 @@
 ---
 description: Interactive documentation updater - analyzes git changes and updates docs with user guidance
-allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*), Bash(find:*), Bash(ls:*), Bash(cat:*), Bash(head:*), Bash(tree:*), Read, Write, Edit, MultiEdit, Glob, Grep, Task
+allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*), Bash(git branch:*), Bash(find:*), Bash(ls:*), Bash(cat:*), Bash(head:*), Bash(tree:*), Bash(wc:*), Read, Write, Glob, Grep, Task
 ---
 
 # Interactive Documentation Update

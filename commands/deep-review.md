@@ -1,6 +1,6 @@
 ---
 description: Interactive deep code review - spawns parallel agents to analyze code and saves detailed report to docs/review/
-allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*), Bash(git branch:*), Bash(find:*), Bash(mkdir:*), Bash(date:*), Bash(wc:*), Read, Write, Glob, Grep, Task
+allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*), Bash(git branch:*), Bash(find:*), Bash(ls:*), Bash(cat:*), Bash(head:*), Bash(tree:*), Bash(wc:*), Read, Write, Glob, Grep, Task
 ---
 
 # Interactive Deep Code Review
@@ -35,7 +35,7 @@ Then display this context to the user:
 I'll coordinate a comprehensive review using 5 specialized agents working in parallel:
 
 | Agent | Focus |
-|-------|-------|
+| ----- | ----- |
 | 🔒 Security | Vulnerabilities, injection, auth issues |
 | 🏗️ Architecture | Design patterns, SOLID, maintainability |
 | ⚡ Performance | Complexity, memory, database efficiency |
@@ -63,7 +63,7 @@ Then **use the `AskUserQuestion` tool** to ask what code to review:
 Based on user's choice, get the diff:
 
 | Choice | Action |
-|--------|--------|
+| ------ | ------ |
 | 1 | Run `git diff --cached`. If empty, tell user and suggest option 2. |
 | 2 | Run `git diff HEAD~1` |
 | 3 | Use `AskUserQuestion` to ask how many commits back with options: "2 commits", "5 commits", "10 commits" (user can select Other for custom). Then run `git diff HEAD~N` |
@@ -502,6 +502,6 @@ Then continue normally.
 6. **Save to file** - always save to `docs/review/`
 7. **No risk levels in output** - user decides priority
 8. **Deep details for each finding** - multiple fix options
-9. **Docs gap agent is key** - helps user know if they need `/update-docs`
+9. **Docs gap agent is key** - helps user know if they need to update documentation
 10. **Handle failures gracefully** - offer retry/skip
 11. **End with clear next steps** - what should user do now?
