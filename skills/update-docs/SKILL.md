@@ -1,6 +1,7 @@
 ---
-description: Interactive documentation updater - analyzes git changes and updates docs with user guidance
-allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*), Bash(find:*), Bash(ls:*), Bash(cat:*), Bash(head:*), Bash(tree:*), Read, Write, Edit, MultiEdit, Glob, Grep, Task
+name: update-docs
+description: This skill should be used when the user asks to "update-docs", "update docs", "update the docs", "update documentation", "sync docs with code", "document changes", "update README", "update changelog", or mentions keeping documentation in sync with code changes.
+version: 1.0.0
 ---
 
 # Interactive Documentation Update
