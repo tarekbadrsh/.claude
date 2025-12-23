@@ -1,0 +1,15 @@
+# Ignore everything by default
+*
+
+# Whitelist specific directories (and their contents)
+!agents/
+!agents/**
+!commands/
+!commands/**
+!skills/
+!skills/**
+
+# Keep these files tracked
+!.gitignore
+!README.md
+!LICENSE
