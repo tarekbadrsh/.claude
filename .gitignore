@@ -8,6 +8,7 @@
 !commands/**
 !skills/
 !skills/**
+!custom-status-line.sh
 
 # Keep these files tracked
 !.gitignore
