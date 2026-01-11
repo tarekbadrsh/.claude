@@ -249,17 +249,17 @@ Each agent focuses on its group's files from its specialized perspective...
 
 | Review Type | Agent File |
 | ----------- | ---------- |
-| Security | `.claude/agents/review-security.md` |
-| Architecture | `.claude/agents/review-architecture.md` |
-| Performance | `.claude/agents/review-performance.md` |
-| Logic | `.claude/agents/review-logic.md` |
-| Docs Gap | `.claude/agents/review-docs-gap.md` |
+| Security | `~/.claude/agents/review-security.md` |
+| Architecture | `~/.claude/agents/review-architecture.md` |
+| Performance | `~/.claude/agents/review-performance.md` |
+| Logic | `~/.claude/agents/review-logic.md` |
+| Docs Gap | `~/.claude/agents/review-docs-gap.md` |
 
 ### How to Spawn Each Agent
 
 For EACH (group, review-type) combination:
 
-1. **Read the agent template** from `.claude/agents/review-{type}.md`
+1. **Read the agent template** from `~/.claude/agents/review-{type}.md`
 2. **Spawn a Task** with template + group-specific instructions
 3. **Only include files from that group** - not all files
 4. **Let the agent run the git command** - don't paste diffs

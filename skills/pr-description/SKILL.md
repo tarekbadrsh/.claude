@@ -245,16 +245,16 @@ Each agent focuses on its group's files from its specialized perspective...
 
 | Analysis Type | Agent File |
 | ------------- | ---------- |
-| Summary | `.claude/agents/pr-summary.md` |
-| Breaking | `.claude/agents/pr-breaking.md` |
-| Testing | `.claude/agents/pr-testing.md` |
-| Docs | `.claude/agents/pr-docs.md` |
+| Summary | `~/.claude/agents/pr-summary.md` |
+| Breaking | `~/.claude/agents/pr-breaking.md` |
+| Testing | `~/.claude/agents/pr-testing.md` |
+| Docs | `~/.claude/agents/pr-docs.md` |
 
 ### How to Spawn Each Agent
 
 For EACH (group, analysis-type) combination:
 
-1. **Read the agent template** from `.claude/agents/pr-{type}.md`
+1. **Read the agent template** from `~/.claude/agents/pr-{type}.md`
 2. **Spawn a Task** with template + group-specific instructions
 3. **Only include files from that group** - not all files
 4. **Let the agent run the git command** - don't paste diffs
@@ -262,7 +262,7 @@ For EACH (group, analysis-type) combination:
 **Task prompt structure (per group):**
 
 ```
-[Paste content from .claude/agents/pr-{type}.md]
+[Paste content from ~/.claude/agents/pr-{type}.md]
 
 ---
 

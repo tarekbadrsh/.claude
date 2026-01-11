@@ -152,24 +152,24 @@ Each agent works in its own context window...
 
 | Review Type | Agent File |
 |-------------|------------|
-| Security | `.claude/agents/review-security.md` |
-| Architecture | `.claude/agents/review-architecture.md` |
-| Performance | `.claude/agents/review-performance.md` |
-| Logic | `.claude/agents/review-logic.md` |
-| Docs Gap | `.claude/agents/review-docs-gap.md` |
+| Security | `~/.claude/agents/review-security.md` |
+| Architecture | `~/.claude/agents/review-architecture.md` |
+| Performance | `~/.claude/agents/review-performance.md` |
+| Logic | `~/.claude/agents/review-logic.md` |
+| Docs Gap | `~/.claude/agents/review-docs-gap.md` |
 
 ### How to Spawn Each Agent
 
 For EACH agent:
 
-1. **Read the agent template** from `.claude/agents/review-{type}.md`
+1. **Read the agent template** from `~/.claude/agents/review-{type}.md`
 2. **Spawn a Task** with template + instructions
 3. **Let the agent run the git command** - don't paste diffs
 
 **Task prompt structure:**
 
 ```
-[Paste content from .claude/agents/review-{type}.md]
+[Paste content from ~/.claude/agents/review-{type}.md]
 
 ---
 

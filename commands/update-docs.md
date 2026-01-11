@@ -226,25 +226,25 @@ Match each file to its agent type:
 
 | File Pattern | Agent Template |
 | ------------ | -------------- |
-| `docs/api/*`, `**/api.md`, `**/endpoints.md` | `.claude/agents/docs-api.md` |
-| `docs/guide/*`, `docs/tutorial/*`, `**/usage.md` | `.claude/agents/docs-guide.md` |
-| `docs/architecture/*`, `**/design.md`, `**/system.md` | `.claude/agents/docs-architecture.md` |
-| `README.md`, `CONTRIBUTING.md`, `INSTALL.md` | `.claude/agents/docs-readme.md` |
-| `CHANGELOG.md`, `HISTORY.md`, `RELEASES.md` | `.claude/agents/docs-changelog.md` |
-| `**/*.py` (Python source files) | `.claude/agents/docs-python-docstring.md` |
+| `docs/api/*`, `**/api.md`, `**/endpoints.md` | `~/.claude/agents/docs-api.md` |
+| `docs/guide/*`, `docs/tutorial/*`, `**/usage.md` | `~/.claude/agents/docs-guide.md` |
+| `docs/architecture/*`, `**/design.md`, `**/system.md` | `~/.claude/agents/docs-architecture.md` |
+| `README.md`, `CONTRIBUTING.md`, `INSTALL.md` | `~/.claude/agents/docs-readme.md` |
+| `CHANGELOG.md`, `HISTORY.md`, `RELEASES.md` | `~/.claude/agents/docs-changelog.md` |
+| `**/*.py` (Python source files) | `~/.claude/agents/docs-python-docstring.md` |
 
 ### How to Spawn Each Agent
 
 For EACH file:
 
-1. **Read the agent template** from `.claude/agents/docs-{type}.md`
+1. **Read the agent template** from `~/.claude/agents/docs-{type}.md`
 2. **Spawn a Task** with the template + minimal instructions
 3. **Let the agent find the git changes itself** - don't paste diffs
 
 Task prompt structure:
 
 ```
-[Paste content from .claude/agents/docs-{type}.md]
+[Paste content from ~/.claude/agents/docs-{type}.md]
 
 ---
 
@@ -272,42 +272,42 @@ Task prompt structure:
 ```
 // ALL TASKS SPAWN IN PARALLEL - each agent finds its own changes
 
-Task(`[content of .claude/agents/docs-api.md]
+Task(`[content of ~/.claude/agents/docs-api.md]
 ---
 Doc file to update: docs/api/users.md
 Source files that changed: src/api/users.ts, src/types/user.ts
 Git command: git diff HEAD~1 -- src/api/users.ts src/types/user.ts
 What to document: New POST /users/invite endpoint`)
 
-Task(`[content of .claude/agents/docs-api.md]
+Task(`[content of ~/.claude/agents/docs-api.md]
 ---
 Doc file to update: docs/api/auth.md
 Source files that changed: src/api/auth.ts
 Git command: git diff HEAD~1 -- src/api/auth.ts
 What to document: Refresh token support`)
 
-Task(`[content of .claude/agents/docs-guide.md]
+Task(`[content of ~/.claude/agents/docs-guide.md]
 ---
 Doc file to update: docs/guides/invitations.md
 Source files that changed: src/api/users.ts, src/services/email.ts
 Git command: git diff HEAD~1 -- src/api/users.ts src/services/email.ts
 What to document: New invitation feature (create new guide)`)
 
-Task(`[content of .claude/agents/docs-readme.md]
+Task(`[content of ~/.claude/agents/docs-readme.md]
 ---
 Doc file to update: README.md
 Source files that changed: .env.example
 Git command: git diff HEAD~1 -- .env.example
 What to document: New SMTP_HOST environment variable`)
 
-Task(`[content of .claude/agents/docs-changelog.md]
+Task(`[content of ~/.claude/agents/docs-changelog.md]
 ---
 Doc file to update: CHANGELOG.md
 Source files that changed: (all changed files)
 Git command: git diff HEAD~1
 What to document: invitation system, refresh tokens`)
 
-Task(`[content of .claude/agents/docs-python-docstring.md]
+Task(`[content of ~/.claude/agents/docs-python-docstring.md]
 ---
 Python file to update: src/services/email.py
 Git command: git diff HEAD~1 -- src/services/email.py
@@ -511,7 +511,7 @@ Then **use the `AskUserQuestion` tool**:
 
 1. **Never proceed without user confirmation**
 2. **One agent per file** - always maximize parallelism
-3. **Read agent templates** from `.claude/agents/` before spawning
+3. **Read agent templates** from `~/.claude/agents/` before spawning
 4. **Include existing content** in Task prompts for style matching
 5. **Ask when unclear** - don't assume
 6. **Collect all results** before showing user
