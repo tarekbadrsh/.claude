@@ -9,6 +9,7 @@
 !skills/
 !skills/**
 !custom-status-line.sh
+!file-suggestion.sh
 
 # Keep these files tracked
 !.gitignore
