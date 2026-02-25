@@ -55,6 +55,7 @@
     "pr": ""
   },
   "model": "opus",
+  "teammateMode": "auto",
   "spinnerTipsEnabled": true,
   "alwaysThinkingEnabled": true,
   "autoUpdatesChannel": "latest",
