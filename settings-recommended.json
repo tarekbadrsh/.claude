@@ -6,11 +6,9 @@
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-opus-4-6",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "95",
     "ENABLE_TOOL_SEARCH": "true",
-    "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1"
   },
   "permissions": {
@@ -54,12 +52,11 @@
     "commit": "",
     "pr": ""
   },
-  "model": "opus",
-  "teammateMode": "auto",
   "spinnerTipsEnabled": true,
   "alwaysThinkingEnabled": true,
   "autoUpdatesChannel": "latest",
-  "enabledPlugins": {},
+  "teammateMode": "auto",
+  "model": "opus",
   "fileSuggestion": {
     "type": "command",
     "command": "~/.claude/file-suggestion.sh"
